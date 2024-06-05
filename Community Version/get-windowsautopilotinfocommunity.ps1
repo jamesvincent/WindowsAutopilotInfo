@@ -1,5 +1,5 @@
 <#PSScriptInfo
-.VERSION 5.0.1
+.VERSION 5.0.2
 .GUID 39efc9c5-7b51-4d1f-b650-0f3818e5327a
 .AUTHOR AndrewTaylor forked from the original by the legend who is Michael Niehaus
 .COMPANYNAME 
@@ -34,6 +34,7 @@ v4.0.9 - Extended sync timeout
 v4.0.10 - Added array for group
 v4.0.11 - Added cert based MsGraph connection
 v5.0.0 - Added support for device identifiers
+v5.0.2 - Updated examples to support APv2
 #>
 
 <#
@@ -104,9 +105,13 @@ Get-CMCollectionMember -CollectionName "All Systems" | .\GetWindowsAutoPilotInfo
 .EXAMPLE
 .\Get-WindowsAutoPilotInfo.ps1 -ComputerName MYCOMPUTER1,MYCOMPUTER2 -OutputFile .\MyComputers.csv -Partner
 .EXAMPLE
-.\GetWindowsAutoPilotInfo.ps1 -Online
+.\Get-WindowsAutoPilotInfo.ps1 -Online
+.EXAMPLE
+.\Get-WindowsAutoPilotInfo.ps1 -Online -GroupTag "UK" -Assign -Reboot
+.EXAMPLE
+.\Get-WindowsAutoPilotInfo.ps1 -Online -Identifier
 .NOTES
-Version:        5.0.1
+Version:        5.0.2
 Author:         Andrew Taylor
 WWW:            andrewstaylor.com
 Creation Date:  14/06/2023
